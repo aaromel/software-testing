@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Run tests and generate coverage
-        run: npm test -- --coverage --coverageProvider=v8
+        run: make test-coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
