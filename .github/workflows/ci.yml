@@ -46,7 +46,13 @@ jobs:
       - name: Install Coveralls
         run: npm install coveralls
 
+      - name: Find and print coverage files
+        run: |
+          COVERAGE_FILES=$(find coverage -name '*.json')
+          echo "Found coverage files: $COVERAGE_FILES"
+          echo "::set-env name=COVERAGE_FILES::$COVERAGE_FILES"
+
       - name: Send coverage to Coveralls
-        run: cat coverage/coverage-*.json | npx coveralls
+        run: cat $COVERAGE_FILES | npx coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
