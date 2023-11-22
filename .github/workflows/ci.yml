@@ -23,36 +23,7 @@ jobs:
         run: npm install
 
       - name: Run tests and generate coverage
-        run: npm test
+        run: npm test -- --coverage --coverageProvider=v8
 
-      - name: Save coverage artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: coverage
-          path: coverage
-
-  coveralls:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Download coverage artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: coverage
-
-      - name: Install Coveralls
-        run: npm install coveralls
-
-      - name: Find and print coverage files
-        run: |
-          COVERAGE_FILES=$(find coverage -name '*.json')
-          echo "Found coverage files: $COVERAGE_FILES"
-          echo "::set-env name=COVERAGE_FILES::$COVERAGE_FILES"
-
-      - name: Send coverage to Coveralls
-        run: cat $COVERAGE_FILES | npx coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
