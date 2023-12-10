@@ -36,6 +36,4 @@ describe("capitalize", () => {
     const result = capitalize("test-ing");
     expect(result).to.equal("Test-ing");
   });
-
-  // Lisää testejä tarvittaessa
 });

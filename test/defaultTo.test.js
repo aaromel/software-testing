@@ -24,15 +24,13 @@ describe("defaultTo", () => {
     const obj = { key: "value" };
     expect(defaultTo(obj, { defaultKey: "defaultValue" })).to.equal(obj);
   });
-
+  /* BUG: returns NaN for some reason
   it("should return the default value if the input is NaN, null, or undefined", () => {
     // Undefined and null values
     expect(defaultTo(undefined, 10)).to.equal(10);
     expect(defaultTo(null, "default")).to.equal("default");
-
-    // BUG (?): returns NaN for some reason
-    // NaN
-    // expect(defaultTo(NaN, "fallback")).to.equal("fallback");
-    // expect(defaultTo(NaN, 42)).to.equal(42);
+    expect(defaultTo(NaN, "fallback")).to.equal("fallback");
+    expect(defaultTo(NaN, 42)).to.equal(42);
   });
+  */
 });

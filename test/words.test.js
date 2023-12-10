@@ -19,23 +19,26 @@ describe("words", () => {
     expect(result).to.deep.equal([]);
   });
 
-  // BUG
-  //it("should handle null input", () => {
-  //  const result = words(null);
-  //  expect(result).to.deep.equal([]);
-  //});
+  /* BUG
+  it("should handle null input", () => {
+    const result = words(null);
+    expect(result).to.deep.equal([]);
+  });
+  */
 
-  // BUG
-  //it("should handle undefined input", () => {
-  //  const result = words(undefined);
-  //  expect(result).to.deep.equal([]);
-  //});
+  /* BUG
+    it("should handle undefined input", () => {
+    const result = words(undefined);
+    expect(result).to.deep.equal([]);
+  });
+  */
 
-  // BUG
-  //it("should handle other than strings", () => {
-  //  const result = words(123);
-  //  expect(result).to.deep.equal([123]);
-  //});
+  /* BUG
+    it("should handle other than strings", () => {
+    const result = words(123);
+    expect(result).to.deep.equal([123]);
+  });
+  */
 
   it("should handle patters as null", () => {
     const result = words("fred, barney, & pebbles", null);

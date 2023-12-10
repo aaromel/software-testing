@@ -37,17 +37,16 @@ describe("filter", () => {
     expect(result).to.deep.equal(users);
   });
 
-  // BUG
-  //it("should handle an array with no predicate provided", () => {
-  //  const users = [
-  //    { user: "barney", active: true },
-  //    { user: "fred", active: false },
-  //  ];
-  //
-  //  const result = filter(users);
-  //
-  //  expect(result).to.deep.equal(users);
-  //});
+  /* BUG
+  it("should handle an array with no predicate provided", () => {
+    const users = [
+      { user: "barney", active: true },
+      { user: "fred", active: false },
+    ];
+  const result = filter(users);
+  expect(result).to.deep.equal(users);
+  });
+  */
 
   it("should handle a predicate that filters based on index", () => {
     const numbers = [1, 2, 3, 4, 5];

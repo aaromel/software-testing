@@ -38,9 +38,10 @@ describe("endsWith", () => {
     const result = endsWith(234, 4);
     expect(result).to.be.false;
   });
-  // BUG
-  //it("should handle parameterless call", () => {
-  //  const result = endsWith();
-  //  expect(result).to.be.false;
-  //});
+  /* BUG
+  it("should handle parameterless call", () => {
+    const result = endsWith();
+    expect(result).to.be.false;
+  });
+  */
 });
